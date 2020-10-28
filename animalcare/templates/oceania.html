@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCEANIA</title>
+    <link rel="shortcut icon" href="Imagenes/JURAFA.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body class="customfontcontinent">
+    <!-- HEADER NAV-->
+    <nav class="header  navbar navbar-inverse navbar-fixed-top sticky navbar-expand-lg navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'america'%}">America</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'europa'%}">Europa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'asia'%}">Asia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'oceania'%}">Oceania</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'africa'%}">Africa</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="{% url 'index' %}">Animal Care</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'donaciones'%}">Donar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--PAGINA -->
+    <h1>OCEANIA</h1>
+    <div class="row">
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/Oceania/Alcatraz_de_Abbott.jpg" alt="Alcatraz" style="width:100%">
+                <h3>Alcatraz De Abbott</h3>
+                <p>El alcatraz de Abbot es uno de los animales de Australia en peligro de extinción.
+                    Esta ave es una especie endémica del océano Índico que anida únicamente en la Isla de Navidad,
+                    en Australia. El alcatraz de Abbott mide unos 79 centímetros de longitud y pesa 1,46 kilogramos;
+                    y su plumaje negro y blanco lo distingue de otras aves que habitan en la zona</p>
+                <br>
+                <p>El alcatraz de Abbott hace su nido en árboles de 150 metros de altura y se alimenta de calamares
+                    y peces que caza en el vuelo. En la Isla de Navidad hay una población de, aproximadamente,
+                    3000 alcatraces. Sin embargo, la población original ha ido decreciendo debido a la tala ilegal
+                    en su hábitat. Otra de las principales amenazas para estas aves son las hormigas locas amarillas,
+                    que desmejoran la calidad de los espacios que habitan.</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/Oceania/Tortuga_de_cuello_corto.png" alt="tortuga" style="width:100%">
+                <h3>Tortuga De Cuello Corto</h3>
+                <p>Esta pequeña tortuga es otro de los animales de Australia en peligro de extinción.
+                    La tortuga de cuello corto es endémica de Australia Occidental y se descubrió por primera vez
+                    en el año 1889. Su peso varía entre los 0,41 kilogramos y los 0,55 kilogramos,
+                    y pueden llegar a medir entre 135 milímetros y 155 milímetros. También, posee un caparazón aplanado,
+                    que parece cuadrado, y se caracteriza por ser de color amarillo-marrón a negro.</p>
+                <br>
+                <p>La tortuga de cuello corto habita en pantanos de suelo arcilloso, en donde construye su nido.
+                    Su alimentación se basa en animales vivos como larvas de insectos, lombrices y renacuajos.
+                    Cuando la temperatura sube y los pantanos se secan,
+                    aumenta su ingesta de alimentos para acumular grasa que le permita sobrevivir durante los meses
+                    de inactividad</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/Oceania/Demonio_de_tasmania.jpg" alt="Demonio" style="width:100%">
+                <h3>Demonio De Tasmania</h3>
+                <p>El demonio de Tasmania es otra especie amenazada de la fauna Australiana.
+                    Este marsupial carnívoro mide, aproximadamente, 800 milímetros y eso lo convierte en el marsupial
+                    más grande existente en la actualidad. Su peso varía entre los 6 kilogramos y los 8 kilogramos.
+                    Se caracterizan por su cuerpo robusto y achaparrado con una cabeza grande y una cola bastante larga.
+                </p>
+                <br>
+                <p>La población de demonios de Tasmania se ha visto afectada por la expansión de los dingos
+                    y por la llegada de los aborígenes australianos hace cientos de años pero,
+                    en la actualidad, su principal amenaza es una enfermedad mortal que les causa tumores faciales.</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/Oceania/rabihorcado_de_la_christmas.jpg" alt="rabihorcado" style="width:100%">
+                <h3>Rabihorcado De La Christmas</h3>
+                <p>Esta ave es otra especie australiana en peligro de extinción. El rabihorcado de la Christmas
+                    es una especie endémica de la Isla de Navidad que se caracteriza por su gran tamaño
+                    (puede llegar a medir entre 90 centímetros y 100 centímetros),
+                    por su plumaje negro, y blanco en el vientre, así como por la franja blanca en la parte de arriba
+                    del ala.</p>
+                <br>
+                <p>El rabihorcado de la Christmas pesa, aproximadamente, 1,5 kilogramos y se alimenta mayormente
+                    de peces, pero también suele robar la caza de otras aves. En la Isla de Navidad hay
+                    una población que varía entre los 2400 y los 4800 ejemplares. Antiguamente,
+                    la población era aún mayor, pero la destrucción de su hábitat
+                    y la depredación de la hormiga loca amarilla han causado que muchos ejemplares desaparezcan.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/Oceania/numbat.jpg" alt="numbat" style="width:100%">
+                <h3>Numbat</h3>
+                <p>El numbat es otro de los animales de Australia en peligro de extinción.
+                    Nombrado el animal estatal de Australia Occidental, el numbat es un animal
+                    pequeño que mide entre 35 centímetros y 45 centímetros y pesa entre 280 gramos y 700 gramos.
+                    Su pelaje es de color gris suave, pero algunos ejemplares tienen un pelaje de color marrón rojizo
+                    y poseen una cola larga y frondosa, que es de la misma medida de su cuerpo.</p>
+                <br>
+                <p>Su hábitat se ha visto amenazado por la depredación de animales introducidos
+                    a Australia y por la tala de los árboles muertos de eucalipto para el cultivo
+                    de nuevos ejemplares.
+                </p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/Oceania/Canguro-Rata_Colipeludo.jpg" alt="Canguro-Rata" style="width:100%">
+                <h3>Canguro-Rata Colipeludo</h3>
+                <p>Este pequeño marsupial es otro de los animales de Australia a punto de desaparecer.
+                    El canguro-rata colipeludo mide 36 centímetros y puede llegar a pesar 1.8 kilogramos.
+                    Su pelaje de color mixto es muy peculiar: marrón grisáceo en la parte superior y gris
+                    pálido en la parte inferior; su cola peluda es un poco más oscura con una franja distintiva
+                    de color negra.</p>
+                <br>
+                <p>Esta especie es nocturna y durante el día descansa en nidos que construye en pastizales y bosques.
+                    Su alimentación se basa en hongos, que consigue excavando; semillas e insectos.
+                    Antiguamente, el canguro-rata colipeludo era considerado una peste y eso hizo que gran parte
+                    de la población fuera exterminada. Por otro lado, los depredadores introducidos al territorio,
+                    algunas enfermedades y el desarrollo de la agricultura han hecho que la población disminuya año tras
+                    año.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/Oceania/Bilby_mayor.jpg" alt="Bilby" style="width:100%">
+                <h3>Bilby Mayor</h3>
+                <p>También conocido como Bandicut conejo, el bilbi mayor es uno de los principales
+                    animales de Australia en peligro de extinción y el más grande de todos los bandicuts.
+                    Algunos ejemplares pueden llegar a pesar entre 0,8 kilógramos y 2,4 kilógramos en estado salvaje
+                    y 3,7 kilógramos en estado de cautiverio. Poseen un pelaje muy tupido de color grisáceo en el lomo,
+                    y blanco en el vientre, que resalta con su cola negra y blanca.</p>
+                <br>
+                <p>El bilbi mayor suele construir su madriguera en zonas áridas de Australia. Allí caza lagartijas,
+                    gusanos, larvas, arañas y otros pequeños insectos; además, recolecta frutas y semillas.
+                    Esta especie es extremadamente rara y la población empezó a disminuir cuando los europeos
+                    colonizaron el territorio australiano y los campos empezaron a utilizarse para la cría de ganado.
+                    También, fue víctima de los depredadores y de los europeos que empezaron a cazarlos para usar su
+                    piel.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/Oceania/wombat.jpg" alt="wombat" style="width:100%">
+                <h3>Wombat</h3>
+                <p>También conocido como wombat del norte, este pequeño mamífero es otro de los animales
+                    en peligro de extinción. Este ejemplar es uno de las tres especies de wombat que
+                    habitan el territorio australiano y es un poco más grande que el wombat común.
+                    Puede llegar a medir 35 centímetros de alto y un metro de alto; y a pesar 40 kilogramos.
+                </p>
+                <br>
+                <p>El wombat de nariz peluda del norte habita en madrigueras y se alimenta de raíces y pasto
+                    que recolecta por las noches. La población se ha visto amenazada por los depredadores
+                    y la competición por comida con animales más grandes. La práctica de la agricultura en Nueva Gales
+                    del Sur,
+                    Victoria y Queensland; y la introducción de búfalos al país, han dañado gravemente su hábitat
+                    natural.</p>
+            </div>
+        </div>
+
+        <div class="content-last">
+            <img src="Imagenes/continentes/oceania.jpg" alt="Bear" style="width:100%">
+            <h3>Australia Y Su Amplia Variedad De Animales En Peligro De Extinción</h3>
+            <p>Australia es un país lleno de ecosistemas en donde se pueden encontrar una amplia variedad de especies y
+                es que no en vano,
+                la fauna australiana es considerada una de las más exóticas del mundo. Sin lugar a duda,
+                los animales más representativos de Australia son el canguro, el ornitorrinco y el koala,
+                pero debes saber que los parques nacionales de todo el territorio australiano
+                son el hogar de otras interesantes especies. Al igual que en muchos lugares del mundo,
+                las acciones irresponsables del ser humano han afectado los ecosistemas australianos y,
+                con el paso de los años, muchos animales de Australia han pasado a ser considerados en peligro
+                de extinción.</p>
+            <br>
+            <p>El gobierno de Australia ha iniciado acciones para proteger a las cientos de especies
+                que ocupan el territorio. Por esa razón, los parques y reservas naturales de todo
+                el país se consideran un patrimonio y se encuentran extremadamente protegidos. Seguramente,
+                siempre has querido conocer Australia y queremos decirte que cuando tomes tu vuelo y aterrices,
+                habrás llegado a uno de los mejores destinos verdes del mundo.
+            </p>
+            <br>
+            <p>AYUDANOS A SALVAR ESTOS ANIMALES, DONANDO A NUESTRA FUNDACION</p>
+        </div>
+
+
+        <!--Footer-->
+
+        <div class="footer">
+            <div class="contenido-footer">
+                <h4>Contacto</h4>
+                <p>contact@animalcare.com</p>
+            </div>
+            <div class="contenido-footer">
+                <h4>Voluntariado</h4>
+                <p>+5698699</p>
+            </div>
+            <div class="contenido-footer">
+                <h4>Localizacion</h4>
+                <p>East 64th Street, New York</p>
+            </div>
+
+        </div>
+        <h6 class="titulo-final">&copy; Animal Care 2020</h6>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

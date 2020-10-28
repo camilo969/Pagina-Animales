@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMERICA</title>
+    <link rel="shortcut icon" href="Imagenes/JURAFA.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body class="customfontcontinent">
+    <!-- HEADER NAV-->
+    <nav class="header  navbar navbar-inverse navbar-fixed-top sticky navbar-expand-lg navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'america'%}">America</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'europa'%}">Europa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'asia'%}">Asia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'oceania'%}">Oceania</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'africa'%}">Africa</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="{% url 'index' %}">Animal Care</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'donaciones'%}">Donar</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--PAGINA -->
+    <h1>AMERICA</h1>
+    <div class="row">
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/America/Serafin_Del_Platanar.jpg" alt="Serafin" style="width:100%">
+                <h3>El ecuatoriano Serafín del platanar</h3>
+                <p>Esta bellísima especie de oso hormiguero (Cyclopes didactylus)
+                    también recibe el curioso nombre de Flor de balsa en el país situado en la
+                    línea imaginaria que divide al globo terráqueo en los hemisferios Norte y Sur. Su piel es
+                    considerada una de las más sedosas de la naturaleza. Suele decírsele también hormiguero pigmeo o
+                    sedoso y es la especie más pequeña entre los osos hormigueros.
+                    Está en riesgo de extinción en Ecuador y otros países.</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/America/Churrete_real.jpg" alt="Churrete" style="width:100%">
+                <h3>El peruano Churrete Real</h3>
+                <p>Machu Pichu, la célebre ciudadela inca que data del 1400,
+                    seguramente sobrevivirá, para bien de las futuras generaciones,
+                    por los cuidados de los que es objeto por parte de los peruanos como
+                    Patrimonio de la Humanidad. Es una de las nuevas Siete Maravillas del Mundo
+                    Moderno y anualmente es visitada por miles de personas, que regresan a salvo a sus hogares.
+                    Irónicamente,
+                    quizá no sobreviva uno de sus visitantes ocasionales más hermosos, el Churrete Real (Cinclodes
+                    patagonicus). Esta ave que vive en arboledas húmedas, cerca de Machu Pichu, está casi extinta, ya
+                    que se cree que solo quedan menos de cien ejemplares. Una pena, particularmente en Perú,
+                    el segundo país del mundo con mayor diversidad de aves.</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/America/Condor_De_California.jpg" alt="Condor" style="width:100%">
+                <h3>El gringo y mexicano Cóndor de California</h3>
+                <p>Los colonizadores estadounidenses conquistaron el Oeste del país casi
+                    extinguiendo a un animal, el búfalo. La matanza indiscriminada del bisonte
+                    americano para alimentar a civiles y ejércitos, casi termina con la especie.
+                    De hecho, William Coddy ganó su legendario apodo de «Buffalo Bill» por
+                    dedicarse a cazar búfalos para vender su carne. Las poblaciones fueron
+                    recuperándose poco a poco y su supervivencia parece estar asegurada por su
+                    crianza con fines comerciales. No ocurre lo mismo con el Cóndor de California (Gymnogyps
+                    californianus),
+                    especie que lleva el nombre de uno de los territorios que el búfalo ayudó a conquistar. Este cóndor,
+                    que vive también en los estados norteamericanos de Nevada y Utah, y en el mexicano de
+                    Baja California, llega a alcanzar 60 años, siendo una de las aves más longevas. También tiene mucha
+                    importancia simbólica en
+                    las culturas indígenas de esos territorios. Afortunadamente, una veintena de ejemplares fueron
+                    capturados para intentar
+                    un repoblamiento natural desde su reproducción en cautiverio.</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/America/cotorra_margaritena.jpg" alt="cotorra" style="width:100%">
+                <h3>La venezolana cotorra margariteña</h3>
+                <p>La cotorra margariteña (Amazona barbadensis) recibe ese nombre porque
+                    uno de sus pocos hábitats es la isla de Margarita, en el estado Nueva Esparta,
+                    Venezuela. Esta bonita especie de pelaje verde, amarillo, azul y rojo, anida en los manglares del
+                    Parque
+                    Nacional Laguna de La Restinga. Los canales de la laguna de La Restinga están muy próximos
+                    a la playa del mismo nombre, una de las más extensas y concurridas de la isla. Se cree que quedan
+                    menos de 200 ejemplares,
+                    que son capturados para venderlos como mascotas.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/America/gato_colocolo.jpg" alt="gato" style="width:100%">
+                <h3>El chileno Colocolo</h3>
+                <p>No estamos hablando de fútbol; quiera Dios que el popular club santiagueño
+                    Colo-Colo perdure por mucho tiempo y gane unos cuantos campeonatos.
+                    Nos referimos al Gato de los Pajonales (Lynchailurus Colocolo).
+                    Este hermoso y pequeño felino vive en varios países de América del Sur con
+                    el nombre de gato montés. En Chile le dicen Colocolo y se ven cada vez menos.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/America/sapo_darwin.jpg" alt="sapo" style="width:100%">
+                <h3>El uruguayo Sapito de Darwin</h3>
+                <p>¿Sabías que el científico Charles Darwin, el autor de la famosa teoría sobre el origen de las
+                    especies,
+                    visitó Uruguay en 1832? Se quedó en el país por casi seis meses. Aparte de sus observaciones de la
+                    naturaleza,
+                    registró en su cuaderno lo impresionado que quedó por las destrezas de los uruguayos desnudos
+                    montando a caballo. En Maldonado,
+                    Darwin se encontró con un anfibio que pasó a llamarse Sapito de Darwin (Melanophryniscus
+                    montevidensis),
+                    que como su nombre lo indica, también fue montevideano, aunque ya parece que se extinguió en la
+                    capital uruguaya y sus cercanías.
+                    Actualmente, el Instituto de Ecología y Ciencias Ambientales de la Universidad de la República
+                    intenta salvarlo.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/America/guacamaya_bandera.jpg" alt="guacamaya" style="width:100%">
+                <h3>La colombiana Guacamaya Bandera</h3>
+                <p>En su famosa novela, El amor en los tiempos del cólera, el premio Nobel colombiano, Gabriel García
+                    Márquez,
+                    narra que uno de los personajes principales, el doctor Juvenal Urbino, tenía un loro que hablaba
+                    español y francés,
+                    enseñado por su dueño, que había estudiado Medicina en Francia. El loro era una atracción turística
+                    por su bilingüismo y en una ocasión
+                    en la que el Presidente de la República visitó Cartagena de Indias, principal escenario de la
+                    novela,
+                    Urbino quiso pavonearse con su loro intelectual frente al Jefe del Estado. Quedó avergonzado porque
+                    el animal se negó a pronunciar palabra.
+                    La Guacamaya Bandera (Ara macao) no habla francés, al menos en vida silvestre, pero imita muy bien
+                    las voces que escucha a su alrededor.
+                    Está en fuerte peligro de extinción porque es inmisericordemente cazada para vender sus bellas
+                    plumas.</p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="content">
+                <img src="Imagenes/America/vaquita_marina.jpg" alt="lince" style="width:100%">
+                <h3>La mexicana Vaquita Marina</h3>
+                <p>Los cetáceos suelen ser muy grandes y pesados. No lo es la vaquita marina (Phocoena sinus),
+                    que apenas llega a los 50 kg y a la que solo parecen gustarle las aguas del Golfo de California o
+                    Mar de Cortés.
+                    Se estima que solo quedan menos de cien ejemplares. Su principal amenaza es la pesca indiscriminada
+                    en la búsqueda de otras especies comerciales.</p>
+            </div>
+        </div>
+
+        <div class="content-last">
+            <img src="Imagenes/continentes/america.jpg" alt="Bear" style="width:100%">
+            <h3>Latinoamérica es la región que más animales ha perdido en medio siglo</h3>
+            <p>Las cifras no son nada alentadoras. Entre 1970 y 2014, el 60 % de las poblaciones de mamíferos, peces,
+                reptiles, entre otros,
+                se han reducido por efecto de la acción humana. Esta disminución es aún más dramática en Sudamérica y
+                América Central, regiones que han perdido hasta
+                el 89 % de las poblaciones de especies silvestres.</p>
+            <br>
+            <p>La sobreexplotación y la actividad agrícola, como consecuencia del consumo desbordado, son las
+                principales causas de esta preocupante desaparición de especies.</p>
+            <br>
+            <p>De acuerdo con el estudio, de 1040 poblaciones evaluadas en la región, que representan 689 especies,
+                las de vertebrados disminuyeron en promedio 4,8 % cada año. Este cambio ha sido el más brusco de todos
+                los espacios biogeográficos analizados.</p>
+            <br>
+            <p>AYUDANOS A SALVAR ESTOS ANIMALES, DONANDO A NUESTRA FUNDACION</p>
+        </div>
+
+
+        <!--Footer-->
+
+        <div class="footer">
+            <div class="contenido-footer">
+                <h4>Contacto</h4>
+                <p>contact@animalcare.com</p>
+            </div>
+            <div class="contenido-footer">
+                <h4>Voluntariado</h4>
+                <p>+5698699</p>
+            </div>
+            <div class="contenido-footer">
+                <h4>Localizacion</h4>
+                <p>East 64th Street, New York</p>
+            </div>
+
+        </div>
+        <h6 class="titulo-final">&copy; Animal Care 2020</h6>
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
