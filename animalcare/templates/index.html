@@ -102,7 +102,8 @@
     <!--Medio de Main-->
     <div class="section">
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url(Imagenes/who\ are\ we.jpg);"><!----------------------------- aca quedee---------------------->
+            <div class="col col-image" style="background-image: url('static/Imagenes/whoarewe.jpg')"><!----------------------------- aca quedee---------------------->
+                
             </div>
             <div class="col col-text">
                 <div class="Aligner-item">
@@ -121,7 +122,7 @@
         </div>
 
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url(Imagenes/helping\ animals.jpg);">
+            <div class="col col-image" style="background-image: url('static/Imagenes/helpinganimals.jpg')">
             </div>
             <div class="col col-text col-left">
                 <div class="Aligner-item">
@@ -138,8 +139,7 @@
         </div>
 
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url(Imagenes/animal\ helpers.jpg);">
-
+            <div class="col col-image" style="background-image: url('static/Imagenes/animalhelpers.jpg')" >
             </div>
             <div class="col col-text">
                 <div class="Aligner-item">
@@ -154,7 +154,7 @@
         </div>
 
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url(Imagenes/feeding\ lemurs.jpg);">
+            <div class="col col-image" style="background-image: url('static/Imagenes/feedinglemurs.jpg')">
             </div>
             <div class="col col-text col-left">
                 <div class="Aligner-item">
@@ -180,7 +180,7 @@
         </div>
 
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url(Imagenes/HELPER.jpg);">
+            <div class="col col-image" style="background-image: url('static/Imagenes/HELPER.jpg')">
             </div>
             <div class="col col-text">
                 <div class="Aligner-item">
@@ -219,47 +219,47 @@
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 2">
-            <img class="img-fluid" src="Imagenes/galeria/tigre.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/tigre.jpg' %}" alt="Card image cap">
             <div class="overlay">Alina</div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 1">
-            <img class="img-fluid" src="Imagenes/galeria/chimp.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/chimp.jpg' %}" alt="Card image cap">
             <div class="overlay">George</div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 1">
-            <img class="img-fluid" src="Imagenes/galeria/lemur.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/lemur.jpg' %}" alt="Card image cap">
             <div class="overlay">Luke</div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 2">
-            <img class="img-fluid" src="Imagenes/galeria/panda.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/panda.jpg' %}" alt="Card image cap">
             <div class="overlay">Roger</div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 2">
-            <img class="img-fluid" src="Imagenes/galeria/redpanda.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/redpanda.jpg' %}" alt="Card image cap">
             <div class="overlay">Rose</div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 1">
-            <img class="img-fluid" src="Imagenes/galeria/rino.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/rino.jpg' %}" alt="Card image cap">
             <div class="overlay">Joseph</div>
         </div>
         <!-- Grid column -->
         <div class="mb-3 pics animation all 1">
-            <img class="img-fluid" src="Imagenes/galeria/bengal.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/bengal.jpg' %}" alt="Card image cap">
             <div class="overlay">Jayda</div>
         </div>
 
@@ -268,7 +268,7 @@
 
     <!--LINK DONACION-->
 
-    <form class="container" action="donaciones.html">
+    <form class="container" action="{% url 'donaciones' %}">
         <h4>Si Te Interesa Nuestra Labor, Te Invitamos A Donar, Nuestra Organizacion Es Sin Fines De Lucro</h4>
         <input class="botons" type="submit" id="boton" value="Donar" name="btnDonar" />
     </form>

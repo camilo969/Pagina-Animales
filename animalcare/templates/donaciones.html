@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
-    <link rel="shortcut icon" href="Imagenes/JURAFA.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'Imagenes/JURAFA.jpg' %}" type="image/x-icon">
     <title>Formulario de Donaciones</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/registrostyle.css" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
 
 
 
@@ -18,7 +18,7 @@
 
 <body>
     <div class="container">
-        <form class="form-register" action="mensaje.html">
+        <form class="form-register" action="{% url 'mensaje' %}">
             <h4>Formulario de Donaciones</h4>
             <input class="controls" type="text" name="txtNombre" value="" required=""
                 placeholder="Ingrese su Nombre" id="id_txtNombre" onkeydown="return alphaOnly(event)" />
@@ -62,11 +62,10 @@
                     style="vertical-align:middle; margin-left:5px;">
                 <img alt=""  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
 
-                <p>Estoy de acuerdo con Donar </p>
                 <input class="botons" type="submit"  id="boton" value="Donar" name="btnDonar"   />
                 
                 <div class="nav-item">
-                    <a class="nav-link" href="index.html">Volver a la paguina principal</a>
+                    <a class="nav-link" href="{% url 'index' %}">Volver A Pagina Principal</a>
                 </div>
 
 
