@@ -1,34 +1,38 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
- 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Lista de Post</title>
     <link rel="shortcut icon" href="Imagenes/PANDA.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
- 
 <body>
  
-
-        <div class="page-header">
-            <h1><a href="/">Blog animales</a></h1>
-        </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
-
-</body>
+    <h1>LLegamos al templates</h1>
  
+    <div>
+        <h1><a href="/">Post Animales</a></h1>
+    </div>
+
+
+    <div>
+        {{nombre}}
+
+    </div>
+
+
+ 
+    {% for post in posts %}
+    <div>
+        <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+</body>
 </html>
