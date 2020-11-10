@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from django.views.generic import TemplateView
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth import views as auth_views
+from django.views.generic import TemplateView
+
 
 urlpatterns = [
     #localhost:8000/admin
@@ -24,4 +29,11 @@ urlpatterns = [
     path('blog/',include('apps.blog.urls')),
     #localhost:8000
     path('',include('apps.mainpage.urls')),
+    path('usuario/', include('apps.Usuario.urls')),
+    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+
+    #127.0.0.1:8000/usuario/registrar
+    path('login/', LoginView.as_view(redirect_authenticated_user=True,template_name='Usuario/login.html'), name='login'),
+    path('logout/', LogoutView.as_view(template_name='Usuario/logout.html'), name='logout'),
+
 ]

@@ -1,0 +1,25 @@
+{% extends 'index.html' %} 
+{% load static %}
+
+{% if user.is_authenticated %}
+    {% block titulo_principal %}Home{% endblock %}
+    {% block clase_principal %}
+        <body class="home">
+    {% endblock %}
+    {% block content %}
+        <div class="row">
+            <div class="col-12">
+                <div class="jumbotron jumbotron-fluid mt-4">
+                    <div class="container">
+                        <h1 class="display-4">Home</h1>
+                        <p class="lead">Administrador de contenido Animalcare</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <p>Nombre: {{user.first_name}} {{user.last_name}}</p>
+                <p>Email: {{user.email}}</p>
+            </div>
+        </div>
+    {% endblock content %}
+{% endif %}

@@ -1,0 +1,37 @@
+{% extends 'Usuario/index/index.html' %}
+{% load static %}
+
+{% block title %}Crear cuenta en Animalcare{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/registro.css' %}" type="text/css">
+{% endblock %}
+
+
+{% block content %}
+<div id="registro" class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron jumbotron-fluid mt-4">
+                <div class="container">
+                    <h1 class="display-4">Registrarse</h1>
+                    <p class="lead">Registro de usuarios de Animalcare</p>
+                </div>
+            </div>
+        </div>    
+        <div class="col-8">
+            <form method="POST">
+                {% csrf_token %} {{ form.as_p }}
+                <div class="form-group nav justify-content-end">
+                    <button class="btn btn-primary" type="submit">GRABAR</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-4">
+            <ul class="nav navbar justify-content-center">
+                <li><a class="btn btn-secondary" href="{% url 'login' %}">Iniciar Sesión</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
