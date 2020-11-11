@@ -30,8 +30,17 @@ def post_detail(request, pk):
     return render(request, 'blog/post_detail.html', {'post': post})
 
 def post_new(request):
-    form = PostForm()
-    return render(request, 'blog/post_edit.html', {'form': form})
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm()
+        return render(request, "blog/post_edit.html", {'form': form})
 
 
 def post_edit(request, pk):
@@ -47,3 +56,8 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def borrar_post(request, pk):
+    instancia = Post.objects.get(pk=pk)
+    instancia.delete()
+    return redirect('post_list_ext')
