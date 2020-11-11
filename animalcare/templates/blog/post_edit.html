@@ -1,9 +1,10 @@
 {% extends 'blog/mainblog.html' %}
  
 {% block content %}
-    <h2>New post</h2>
+    <h2>Formuiloario</h2>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
+        {{ form.as_table }}
         <button type="submit" class="save btn btn-default">Save</button>
+        <a class="btn btn-default" href="{% url 'post_list_ext' %}">cancelar<span class="glyphicon glyphicon-pencil"></span></a>
     </form>
 {% endblock %}
