@@ -15,7 +15,7 @@
 {% load static %}
 <body class="customfont">
     <header>
-        <!-- HEADER NAV hola camilo-->
+        <!-- HEADER NAV -->
         <nav class="header  navbar navbar-inverse navbar-fixed-top sticky navbar-expand-lg navbar-dark bg-dark">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto">
@@ -36,7 +36,7 @@
                         <a class="nav-link" href="{% url 'africa'%}">Africa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'donaciones'%}">Donar</a>
+                        <a class="btn btn-outline-success" href="{% url 'donaciones'%}">Donar</a>
                     </li>
                 </ul>
             </div>
@@ -48,12 +48,27 @@
             </div>
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" >
+                          Hola {{user.username}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#">Ver Perfil</a>
+                          <a class="dropdown-item" href="#">Blog</a>
+                        </div>
+                      </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'donaciones'%}">Iniciar Sesion</a>
+                        <a class="btn btn-outline-light" href="{% url 'logout' %}">Cerrar Sesion</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item ">
+                        <a class="btn btn-outline-light" href="{% url 'login'%}">Iniciar Sesion</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'donaciones'%}">Crear Cuenta</a>
+                        <a class="btn btn-outline-light" href="{% url 'registrar'%}">Crear Cuenta</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -276,7 +291,7 @@
 
     <form class="container" action="{% url 'donaciones' %}">
         <h4>Si Te Interesa Nuestra Labor, Te Invitamos A Donar, Nuestra Organizacion Es Sin Fines De Lucro</h4>
-        <input class="botons" type="submit" id="boton" value="Donar" name="btnDonar" />
+        <input class="btn btn-outline-success" type="submit" id="boton" value="Donar" name="btnDonar" />
     </form>
 
     <!--Footer-->
