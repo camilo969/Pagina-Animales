@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASIA</title>
-    <link rel="shortcut icon" href="Imagenes/PANDA.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'Imagenes/PANDA.jpg' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
@@ -34,19 +34,40 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'africa'%}">Africa</a>
                 </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-success" href="{% url 'donaciones'%}">Donar</a>
+                </li>
             </ul>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto" href="{% url 'index' %}">Animal Care</a>
+            <a class="navbar-brand mx-auto" href="{% url 'index' %}">ANIMAL CARE</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" >
+                      Hola {{user.username}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">Ver Perfil</a>
+                      <a class="dropdown-item" href="#">Blog</a>
+                    </div>
+                  </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'donaciones'%}">Donar</a>
+                    <a class="btn btn-outline-light" href="{% url 'logout' %}">Cerrar Sesion</a>
                 </li>
+                {% else %}
+                <li class="nav-item ">
+                    <a class="btn btn-outline-light" href="{% url 'login'%}">Iniciar Sesion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-light" href="{% url 'registrar'%}">Crear Cuenta</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
@@ -56,7 +77,7 @@
     <div class="row">
         <div class="column">
             <div class="content">
-                <img src="Imagenes/Asia/Pnada_rojo_1024x576.jpg" alt="REDPANDA" style="width:100%">
+                <img src="{% static 'Imagenes/Asia/Pnada_rojo_1024x576.jpg' %}" alt="REDPANDA" style="width:100%">
                 <h3>Panda Rojo</h3>
                 <p>El oso panda rojo o Ailurus fulgens puede que no sea un animal muy conocido,
                     pero es una de las especies asiáticas en mayor riesgo de desaparecer en los
@@ -69,7 +90,7 @@
         </div>
         <div class="column">
             <div class="content">
-                <img src="Imagenes/Asia/manada-elefantes.jpg" alt="elefantes" style="width:100%">
+                <img src="{% static 'Imagenes/Asia/manada-elefantes.jpg' %}" alt="elefantes" style="width:100%">
                 <h3>Elefante Asiático</h3>
                 <p>Los elefantes asiáticos o Elephas maximus pueden verse en todo el mundo desde
                     hace muchos años, de hecho hace siglos que han viajado como parte de imperios
@@ -86,7 +107,7 @@
         </div>
         <div class="column">
             <div class="content">
-                <img src="Imagenes/Asia/tigre-de-bengala.jpg" alt="tigre" style="width:100%">
+                <img src="{% static 'Imagenes/Asia/tigre-de-bengala.jpg' %}" alt="tigre" style="width:100%">
                 <h3>Tigre De Bengala</h3>
                 <p>Seguramente hayas oído que los tigres en estado salvaje en Asia, su lugar de origen,
                     están cada vez en mayor riesgo y es totalmente cierto. Existen diversas especies de
@@ -103,7 +124,7 @@
         </div>
         <div class="column">
             <div class="content">
-                <img src="Imagenes/Asia/Leopardo_de_las_nieves.jpg" alt="Leopardo" style="width:100%">
+                <img src="{% static 'Imagenes/Asia/Leopardo_de_las_nieves.jpg' %}" alt="Leopardo" style="width:100%">
                 <h3>Leopardo De Las Nieves</h3>
                 <p>Otro gran felino que está en riesgo de dejar de existir es el conocido como Fantasma
                     de las nieves. Se trata del leopardo de las nieves, Uncia uncia o Panthera Uncia,
@@ -119,7 +140,7 @@
 
         <div class="column">
             <div class="content">
-                <img src="Imagenes/Asia/ibis_nipon.jpg" alt="ibis" style="width:100%">
+                <img src="{% static 'Imagenes/Asia/ibis_nipon.jpg' %}" alt="ibis" style="width:100%">
                 <h3>Ibis Nipon</h3>
                 <p>El ibis nipón, también llamado ibis crestado japonés o toki y científicamente
                     conocido como Nipponia nippon, es otro de los animales de Asia que están en mayor
@@ -134,7 +155,7 @@
 
         <div class="column">
             <div class="content">
-                <img src="Imagenes/Asia/caballos-przewalski.jpg" alt="caballo" style="width:100%">
+                <img src="{% static 'Imagenes/Asia/caballos-przewalski.jpg' %}" alt="caballo" style="width:100%">
                 <h3>Caballo Przewalski</h3>
                 <p>El Equus ferus przewalskii es la única subespecie de caballo realmente salvaje
                     que existe actualmente, el resto de caballos salvajes del mundo son realmente
@@ -149,7 +170,7 @@
 
         <div class="column">
             <div class="content">
-                <img src="Imagenes/Asia/guepardo.jpg" alt="guepardo" style="width:100%">
+                <img src="{% static 'Imagenes/Asia/guepardo.jpg' %}" alt="guepardo" style="width:100%">
                 <h3>Guepardo</h3>
                 <p>Los Acinonyx jubatus, guepardos o cheetah son muy conocidos en África,
                     pero poca gente sabe que también habitaban en Asia de forma extensa hace mucho tiempo.
@@ -165,7 +186,7 @@
 
         <div class="column">
             <div class="content">
-                <img src="Imagenes/Asia/oso-panda.jpg" alt="osopanda" style="width:100%">
+                <img src="{% static 'Imagenes/Asia/oso-panda.jpg' %}" alt="osopanda" style="width:100%">
                 <h3>Oso Panda</h3>
                 <p>Hemos dejado al oso panda para el fina, este mundialmente conocido animal asiático,
                     porque actualmente genera grandes dudas sobre su estado poblacional.
@@ -183,7 +204,7 @@
         </div>
 
         <div class="content-last">
-            <img src="Imagenes/continentes/Asia.jpg" alt="Bear" style="width:100%">
+            <img src="{% static 'Imagenes/continentes/Asia.jpg' %}" alt="Bear" style="width:100%">
             <h3>Asia El Continente Con Mayor Numero De Especies</h3>
             <p>Alrededor de todo el mundo existen miles de especies que cada día se encuentran
                 en peligro de extinción, estando muchas de ellas a punto de desaparecer.

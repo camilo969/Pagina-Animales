@@ -15,7 +15,7 @@
 {% load static %}
 <body class="customfont">
     <header>
-        <!-- HEADER NAV-->
+        <!-- HEADER NAV -->
         <nav class="header  navbar navbar-inverse navbar-fixed-top sticky navbar-expand-lg navbar-dark bg-dark">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto">
@@ -35,19 +35,40 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'africa'%}">Africa</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-success" href="{% url 'donaciones'%}">Donar</a>
+                    </li>
                 </ul>
             </div>
             <div class="mx-auto order-0">
-                <a class="navbar-brand mx-auto" href="{% url 'index' %}">Animal Care</a>
+                <a class="navbar-brand mx-auto" href="{% url 'index' %}">ANIMAL CARE</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" >
+                          Hola {{user.username}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#">Ver Perfil</a>
+                          <a class="dropdown-item" href="#">Blog</a>
+                        </div>
+                      </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'donaciones'%}">Donar</a>
+                        <a class="btn btn-outline-light" href="{% url 'logout' %}">Cerrar Sesion</a>
                     </li>
+                    {% else %}
+                    <li class="nav-item ">
+                        <a class="btn btn-outline-light" href="{% url 'login'%}">Iniciar Sesion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light" href="{% url 'registrar'%}">Crear Cuenta</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -102,7 +123,8 @@
     <!--Medio de Main-->
     <div class="section">
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url(Imagenes/who\ are\ we.jpg);"><!----------------------------- aca quedee---------------------->
+            <div class="col col-image" style="background-image: url('static/Imagenes/whoarewe.jpg')"><!----------------------------- aca quedee---------------------->
+                
             </div>
             <div class="col col-text">
                 <div class="Aligner-item">
@@ -121,7 +143,7 @@
         </div>
 
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url(Imagenes/helping\ animals.jpg);">
+            <div class="col col-image" style="background-image: url('static/Imagenes/helpinganimals.jpg')">
             </div>
             <div class="col col-text col-left">
                 <div class="Aligner-item">
@@ -138,12 +160,11 @@
         </div>
 
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url(Imagenes/animal\ helpers.jpg);">
-
+            <div class="col col-image" style="background-image: url('static/Imagenes/animalhelpers.jpg')" >
             </div>
             <div class="col col-text">
                 <div class="Aligner-item">
-                    <p>¿Por que lo hacemos?</p>
+                    <p>¿Por Que Lo Hacemos?</p>
                     <p>La respuesta es muy simple, amamos los animales, y creemos que son parte fundamental de Nuestra
                         Biodiversidad. Y estamos muy contentos de que cada vez mas personas se nos acerquen con ganas de
                         ayudar.
@@ -154,7 +175,7 @@
         </div>
 
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url(Imagenes/feeding\ lemurs.jpg);">
+            <div class="col col-image" style="background-image: url('static/Imagenes/feedinglemurs.jpg')">
             </div>
             <div class="col col-text col-left">
                 <div class="Aligner-item">
@@ -180,7 +201,7 @@
         </div>
 
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url(Imagenes/HELPER.jpg);">
+            <div class="col col-image" style="background-image: url('static/Imagenes/HELPER.jpg')">
             </div>
             <div class="col col-text">
                 <div class="Aligner-item">
@@ -219,47 +240,47 @@
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 2">
-            <img class="img-fluid" src="Imagenes/galeria/tigre.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/tigre.jpg' %}" alt="Card image cap">
             <div class="overlay">Alina</div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 1">
-            <img class="img-fluid" src="Imagenes/galeria/chimp.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/chimp.jpg' %}" alt="Card image cap">
             <div class="overlay">George</div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 1">
-            <img class="img-fluid" src="Imagenes/galeria/lemur.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/lemur.jpg' %}" alt="Card image cap">
             <div class="overlay">Luke</div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 2">
-            <img class="img-fluid" src="Imagenes/galeria/panda.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/panda.jpg' %}" alt="Card image cap">
             <div class="overlay">Roger</div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 2">
-            <img class="img-fluid" src="Imagenes/galeria/redpanda.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/redpanda.jpg' %}" alt="Card image cap">
             <div class="overlay">Rose</div>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="mb-3 pics animation all 1">
-            <img class="img-fluid" src="Imagenes/galeria/rino.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/rino.jpg' %}" alt="Card image cap">
             <div class="overlay">Joseph</div>
         </div>
         <!-- Grid column -->
         <div class="mb-3 pics animation all 1">
-            <img class="img-fluid" src="Imagenes/galeria/bengal.jpg" alt="Card image cap">
+            <img class="img-fluid" src="{% static 'Imagenes/galeria/bengal.jpg' %}" alt="Card image cap">
             <div class="overlay">Jayda</div>
         </div>
 
@@ -268,9 +289,9 @@
 
     <!--LINK DONACION-->
 
-    <form class="container" action="donaciones.html">
+    <form class="container" action="{% url 'donaciones' %}">
         <h4>Si Te Interesa Nuestra Labor, Te Invitamos A Donar, Nuestra Organizacion Es Sin Fines De Lucro</h4>
-        <input class="botons" type="submit" id="boton" value="Donar" name="btnDonar" />
+        <input class="btn btn-outline-success" type="submit" id="boton" value="Donar" name="btnDonar" />
     </form>
 
     <!--Footer-->

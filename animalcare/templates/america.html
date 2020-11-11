@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMERICA</title>
-    <link rel="shortcut icon" href="Imagenes/JURAFA.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'Imagenes/JURAFA.jpg' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
@@ -34,19 +34,40 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'africa'%}">Africa</a>
                 </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-success" href="{% url 'donaciones'%}">Donar</a>
+                </li>
             </ul>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto" href="{% url 'index' %}">Animal Care</a>
+            <a class="navbar-brand mx-auto" href="{% url 'index' %}">ANIMAL CARE</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" >
+                      Hola {{user.username}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">Ver Perfil</a>
+                      <a class="dropdown-item" href="#">Blog</a>
+                    </div>
+                  </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'donaciones'%}">Donar</a>
+                    <a class="btn btn-outline-light" href="{% url 'logout' %}">Cerrar Sesion</a>
                 </li>
+                {% else %}
+                <li class="nav-item ">
+                    <a class="btn btn-outline-light" href="{% url 'login'%}">Iniciar Sesion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-light" href="{% url 'registrar'%}">Crear Cuenta</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
@@ -56,7 +77,7 @@
     <div class="row">
         <div class="column">
             <div class="content">
-                <img src="Imagenes/America/Serafin_Del_Platanar.jpg" alt="Serafin" style="width:100%">
+                <img src="{% static 'Imagenes/America/Serafin_Del_Platanar.jpg' %}" alt="Serafin" style="width:100%">
                 <h3>El ecuatoriano Serafín del platanar</h3>
                 <p>Esta bellísima especie de oso hormiguero (Cyclopes didactylus)
                     también recibe el curioso nombre de Flor de balsa en el país situado en la
@@ -68,7 +89,7 @@
         </div>
         <div class="column">
             <div class="content">
-                <img src="Imagenes/America/Churrete_real.jpg" alt="Churrete" style="width:100%">
+                <img src="{% static 'Imagenes/America/Churrete_real.jpg' %}" alt="Churrete" style="width:100%">
                 <h3>El peruano Churrete Real</h3>
                 <p>Machu Pichu, la célebre ciudadela inca que data del 1400,
                     seguramente sobrevivirá, para bien de las futuras generaciones,
@@ -84,7 +105,7 @@
         </div>
         <div class="column">
             <div class="content">
-                <img src="Imagenes/America/Condor_De_California.jpg" alt="Condor" style="width:100%">
+                <img src="{% static 'Imagenes/America/Condor_De_California.jpg' %}" alt="Condor" style="width:100%">
                 <h3>El gringo y mexicano Cóndor de California</h3>
                 <p>Los colonizadores estadounidenses conquistaron el Oeste del país casi
                     extinguiendo a un animal, el búfalo. La matanza indiscriminada del bisonte
@@ -105,7 +126,7 @@
         </div>
         <div class="column">
             <div class="content">
-                <img src="Imagenes/America/cotorra_margaritena.jpg" alt="cotorra" style="width:100%">
+                <img src="{% static 'Imagenes/America/cotorra_margaritena.jpg' %}" alt="cotorra" style="width:100%">
                 <h3>La venezolana cotorra margariteña</h3>
                 <p>La cotorra margariteña (Amazona barbadensis) recibe ese nombre porque
                     uno de sus pocos hábitats es la isla de Margarita, en el estado Nueva Esparta,
@@ -120,7 +141,7 @@
 
         <div class="column">
             <div class="content">
-                <img src="Imagenes/America/gato_colocolo.jpg" alt="gato" style="width:100%">
+                <img src="{% static 'Imagenes/America/gato_colocolo.jpg' %}" alt="gato" style="width:100%">
                 <h3>El chileno Colocolo</h3>
                 <p>No estamos hablando de fútbol; quiera Dios que el popular club santiagueño
                     Colo-Colo perdure por mucho tiempo y gane unos cuantos campeonatos.
@@ -132,7 +153,7 @@
 
         <div class="column">
             <div class="content">
-                <img src="Imagenes/America/sapo_darwin.jpg" alt="sapo" style="width:100%">
+                <img src="{% static 'Imagenes/America/sapo_darwin.jpg' %}" alt="sapo" style="width:100%">
                 <h3>El uruguayo Sapito de Darwin</h3>
                 <p>¿Sabías que el científico Charles Darwin, el autor de la famosa teoría sobre el origen de las
                     especies,
@@ -151,7 +172,7 @@
 
         <div class="column">
             <div class="content">
-                <img src="Imagenes/America/guacamaya_bandera.jpg" alt="guacamaya" style="width:100%">
+                <img src="{% static 'Imagenes/America/guacamaya_bandera.jpg' %}" alt="guacamaya" style="width:100%">
                 <h3>La colombiana Guacamaya Bandera</h3>
                 <p>En su famosa novela, El amor en los tiempos del cólera, el premio Nobel colombiano, Gabriel García
                     Márquez,
@@ -172,7 +193,7 @@
 
         <div class="column">
             <div class="content">
-                <img src="Imagenes/America/vaquita_marina.jpg" alt="lince" style="width:100%">
+                <img src="{% static 'Imagenes/America/vaquita_marina.jpg' %}" alt="lince" style="width:100%">
                 <h3>La mexicana Vaquita Marina</h3>
                 <p>Los cetáceos suelen ser muy grandes y pesados. No lo es la vaquita marina (Phocoena sinus),
                     que apenas llega a los 50 kg y a la que solo parecen gustarle las aguas del Golfo de California o
@@ -183,7 +204,7 @@
         </div>
 
         <div class="content-last">
-            <img src="Imagenes/continentes/america.jpg" alt="Bear" style="width:100%">
+            <img src="{% static 'Imagenes/continentes/america.jpg' %}" alt="Bear" style="width:100%">
             <h3>Latinoamérica es la región que más animales ha perdido en medio siglo</h3>
             <p>Las cifras no son nada alentadoras. Entre 1970 y 2014, el 60 % de las poblaciones de mamíferos, peces,
                 reptiles, entre otros,

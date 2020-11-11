@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <title>Login</title>
+</head>
+{% block content %}
+
+<body>
+    {% load crispy_forms_tags %}
+    <!------ Include the above in your HEAD tag ---------->
+    <div class="sidenav">
+        <br> <br>
+        <div class="login-main-text">
+            <h1>Animal Care</h1><br>
+            <h2>Amamos los animales</h2>
+            <p>¿Aun no eres parte de nuestra comunidad?</p>
+            <a class="btn btn-outline-light" href="{% url 'registrar'%}">Registrate</a>
+        </div>
+    </div>
+    <div class="main center">
+        <div class="col-md-6 col-sm-12">
+            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+            <form action="" method="POST">
+                <h1>Iniciar Sesion</h1>
+                {% csrf_token %}
+                {{form | crispy}}
+
+
+                <input class="btn btn-outline-dark float-right" type="submit" value="Iniciar Sesion" />
+            </form>
+            
+        </div>
+        <div class="nav-item right">
+            <a class="btn btn-outline-dark float-right" href="{% url 'index' %}">Olvide Mi Contraseña</a>
+        </div>
+        <div class="nav-item left">
+            <a class="nav-link text-dark" href="{% url 'index' %}">Volver A Pagina Principal</a>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+</html>

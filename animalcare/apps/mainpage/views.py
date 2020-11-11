@@ -22,3 +22,6 @@ def africa(request):
 
 def donaciones(request):
     return render(request,'donaciones.html')
+
+def mensaje(request):
+    return render(request,'mensaje.html')

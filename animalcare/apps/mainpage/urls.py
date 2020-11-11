@@ -17,6 +17,8 @@ urlpatterns=[
     path('africa',views.africa, name="africa"),
     #localhost:8000/donaciones
     path('donaciones',views.donaciones, name="donaciones"),
+    #localhost:8000/mensaje
+    path('mensaje',views.mensaje, name="mensaje"),
 
     #-------------------------------------------------
 ]
