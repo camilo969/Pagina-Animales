@@ -1,36 +1,95 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
- 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Animal Care Blog</title>
     <link rel="shortcut icon" href="Imagenes/PANDA.jpg" type="image/x-icon">
 
-
-    <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-</head>
- 
-<body>
- 
 
-        <div class="page-header">
-            <h1><a href="/">Blog animales</a></h1>
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+
+    <nav class="header  navbar navbar-inverse navbar-fixed-top sticky navbar-expand-lg navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'america'%}">America</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'europa'%}">Europa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'asia'%}">Asia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'oceania'%}">Oceania</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'africa'%}">Africa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-success" href="{% url 'donaciones'%}">Donar</a>
+                </li>
+            </ul>
         </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    
-                    {% endblock %}
-                </div>
-            </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#">ANIMAL CARE POST</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true">
+                        Hola {{user.username}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                        <a class="dropdown-item" href="{% url 'post_list_ext'%}">Blog</a>
+                        <a class="dropdown-item" href="{% url 'post_new' %}">Postear</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-light" href="{% url 'logout' %}">Cerrar Sesion</a>
+                </li>
+                {% else %}
+                <li class="nav-item ">
+                    <a class="btn btn-outline-light" href="{% url 'login'%}">Iniciar Sesion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-light" href="{% url 'registrar'%}">Crear Cuenta</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+
+
+
 
 </body>
- 
+
 </html>
