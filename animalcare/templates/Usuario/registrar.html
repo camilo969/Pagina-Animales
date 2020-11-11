@@ -12,17 +12,18 @@
     <title>Registrar</title>
 </head>
 
-<body >
+<body>
     {% block content %}
-    <div class="container">
-        <div class="centered">
-            <h1>REGISTRARSE</h1>
-            <div class=""></div>
+    <div class="container" >
+        <div class="centered" >
+
+
             <form method="POST">
+                <h1>REGISTRARSE</h1>
                 {% csrf_token %} {{ form | crispy }}
                 <div class="float-right">
-                    <button class="btn btn-outline-info" type="reset">LIMPIAR</button>
-                    <button class="btn btn-outline-success" type="submit">GUARDAR</button>
+                    <button class="btn btn-dark" type="reset">LIMPIAR</button>
+                    <button class="btn btn-dark" type="submit">GUARDAR</button>
 
                 </div>
             </form>
@@ -31,7 +32,7 @@
             </div>
         </div>
     </div>
-    </div>
+
     {% endblock %}
 
 </body>
