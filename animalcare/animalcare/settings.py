@@ -133,3 +133,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = 'animalcare4444@gmail.com'
+EMAIL_HOST_PASSWORD = '123animalcare'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
