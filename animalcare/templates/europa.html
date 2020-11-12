@@ -49,14 +49,20 @@
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" >
-                      Hola {{user.username}}
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true">
+                        Hola {{user.username}}
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="#">Ver Perfil</a>
-                      <a class="dropdown-item" href="#">Blog</a>
+
+                        <a class="dropdown-item" href="{% url 'post_list_ext'%}">Blog</a>
+                        <a class="dropdown-item" href="{% url 'post_new' %}">Postear</a>
                     </div>
-                  </li>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-success" href="{% url 'post_list_ext'%}">BLOG</a>
+                </li>
+
                 <li class="nav-item">
                     <a class="btn btn-outline-light" href="{% url 'logout' %}">Cerrar Sesion</a>
                 </li>

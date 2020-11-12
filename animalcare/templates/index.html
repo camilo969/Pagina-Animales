@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 {% load static %}
+
 <body class="customfont">
     <header>
         <!-- HEADER NAV -->
@@ -50,15 +51,20 @@
                 <ul class="navbar-nav ml-auto">
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" >
-                          Hola {{user.username}}
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true">
+                            Hola {{user.username}}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          
-                          <a class="dropdown-item" href="{% url 'post_list_ext'%}">Blog</a>
-                          <a class="dropdown-item" href="{% url 'post_new' %}">Postear</a>
+
+                            <a class="dropdown-item" href="{% url 'post_list_ext'%}">Blog</a>
+                            <a class="dropdown-item" href="{% url 'post_new' %}">Postear</a>
                         </div>
-                      </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-success" href="{% url 'post_list_ext'%}">BLOG</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="btn btn-outline-light" href="{% url 'logout' %}">Cerrar Sesion</a>
                     </li>
@@ -84,10 +90,11 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
-                    <img class="imgcarousel" src="{% static 'Imagenes/loro_1920.jpg' %}" alt=""> 
+                    <img class="imgcarousel" src="{% static 'Imagenes/loro_1920.jpg' %}" alt="">
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="animalcare">ANIMAL CARE WILDLIFE RESCUE</h3>
-                        <p class="header-text">"Hasta que uno no ha amado un animal, una parte del alma sigue sin despertar"</p>
+                        <p class="header-text">"Hasta que uno no ha amado un animal, una parte del alma sigue sin
+                            despertar"</p>
                         <cite>-Anatole France</cite>
                     </div>
                 </div>
@@ -95,7 +102,8 @@
                     <img class="imgcarousel" src="{% static 'Imagenes/giraffe-2222908_1920.jpg' %}" alt="">
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="animalcare">ANIMAL CARE WILDLIFE RESCUE</h3>
-                        <p class="header-text"> "Estoy a favor del derecho de los animales, al igual que del derecho de los humanos. Ese es
+                        <p class="header-text"> "Estoy a favor del derecho de los animales, al igual que del derecho de
+                            los humanos. Ese es
                             el camino de un ser humano completo"</p>
                         <cite>-Abraham Lincoln</cite>
                     </div>
@@ -104,7 +112,8 @@
                     <img class="imgcarousel" src="{%static 'Imagenes/fallow-deer-984573_1920.jpg' %}" alt="">
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="animalcare">ANIMAL CARE WILDLIFE RESCUE</h3>
-                        <p class="header-text">"No creo en el concepto de infierno, pero si lo hiciese, pensaría en el como lleno de gente
+                        <p class="header-text">"No creo en el concepto de infierno, pero si lo hiciese, pensaría en el
+                            como lleno de gente
                             que fue cruel con los animales" </p>
                         <cite>-Gary Larson</cite>
                     </div>
@@ -124,8 +133,9 @@
     <!--Medio de Main-->
     <div class="section">
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url('static/Imagenes/whoarewe.jpg')"><!----------------------------- aca quedee---------------------->
-                
+            <div class="col col-image" style="background-image: url('static/Imagenes/whoarewe.jpg')">
+                <!----------------------------- aca quedee---------------------->
+
             </div>
             <div class="col col-text">
                 <div class="Aligner-item">
@@ -161,7 +171,7 @@
         </div>
 
         <div class="grid-flex">
-            <div class="col col-image" style="background-image: url('static/Imagenes/animalhelpers.jpg')" >
+            <div class="col col-image" style="background-image: url('static/Imagenes/animalhelpers.jpg')">
             </div>
             <div class="col col-text">
                 <div class="Aligner-item">

@@ -1,7 +1,20 @@
 {% extends 'blog/mainblog.html' %}
-
+{% load crispy_forms_tags %}
 {% block content %}
+<br><br>
+<form class="form-inline mb-5 float-right" method="GET">
+    
+    <div class="form-group mx-3">
+        <label class="mr-2">Buscar por Titulo:</label>
+        {{ form | crispy }}
+        <input type="text" class="form-control mr-2" name="titulo_post">
+        <button class="btn btn-outline-light" type="submit" name="btn-titulo-post">Buscar</button>
+        <button class="btn btn-outline-light" href="{% url 'post_list_ext'%}" name="btn-titulo-post">Atras</button>
+    </div>
+
+</form>
 {% for post in posts %}
+<br><br><br><br><br>
 <div class="container post">
     <div class="card text-white bg-dark mb-3">
         

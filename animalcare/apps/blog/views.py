@@ -17,11 +17,17 @@ def post_list(request):
 
 # Create your views here.
 def blog(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    nombre = "Nelson"
-    contexto ={'posts': posts,
-                'nombre': nombre}
-    return render(request, 'blog/post_list_ext.html', contexto)
+    lista= Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    nombre_carrera= request.GET.get('titulo_post')
+ 
+    if 'btn-titulo-post' in request.GET:
+        if nombre_carrera:
+            lista= Post.objects.filter(title__icontains=nombre_carrera)
+
+    data = {
+        'posts': lista
+    }
+    return render(request, 'blog/post_list_ext.html', data)
 
 
 
