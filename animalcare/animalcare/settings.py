@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.blog',
     'apps.Usuario',
     'crispy_forms',
+    'django.contrib.staticfiles.testing',
     
 ]
 
