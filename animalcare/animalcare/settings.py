@@ -29,6 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SOCIAL_AUTH_FACEBOOK_KEY = '202599561378214'
+SOCIAL_AUTH_FACEBOOK_SECRET = '78fd43f156c74dac4bf51ec7b1300c0f'
+
 
 # Application definition
 
@@ -42,8 +45,7 @@ INSTALLED_APPS = [
     'apps.blog',
     'apps.Usuario',
     'crispy_forms',
-    'django.contrib.staticfiles.testing',
-    'pwa',
+    'social_django',
     
 ]
 
@@ -57,6 +59,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
+    
+
 ]
 
 ROOT_URLCONF = 'animalcare.urls'
@@ -72,6 +77,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -135,6 +142,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+
+
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 25
@@ -142,25 +151,7 @@ EMAIL_HOST_USER = 'animalcare4444@gmail.com'
 EMAIL_HOST_PASSWORD = '123animalcare'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-
-# PWA
-PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'static/js', 'serviceworker.js')
-
-PWA_APP_NAME = 'Proyecto Animal Care'
-PWA_APP_DESCRIPTION = 'Web Animal Care'
-PWA_APP_THEME_COLOR = '#87EFC3'
-PWA_APP_BACKGROUND_COLOR = '#fff'
-PWA_APP_ICONS = [
-    {
-        'src': '/static/imagenes/dog (1).png',
-        'sizes': '256x256'
-    },
-    {
-        'src': '/static/imagenes/dog (2).png',
-        'sizes': '512x512'
-    },
-    {
-        'src': '/static/imagenes/dog.png',
-        'sizes': '128x128'
-    }
-]
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
