@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'apps.blog',
     'apps.Usuario',
     'crispy_forms',
-    'rest_framework',
+    'django.contrib.staticfiles.testing',
+    'pwa',
     
 ]
 
@@ -140,3 +141,26 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = 'animalcare4444@gmail.com'
 EMAIL_HOST_PASSWORD = '123animalcare'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+# PWA
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'static/js', 'serviceworker.js')
+
+PWA_APP_NAME = 'Proyecto Animal Care'
+PWA_APP_DESCRIPTION = 'Web Animal Care'
+PWA_APP_THEME_COLOR = '#87EFC3'
+PWA_APP_BACKGROUND_COLOR = '#fff'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/imagenes/dog (1).png',
+        'sizes': '256x256'
+    },
+    {
+        'src': '/static/imagenes/dog (2).png',
+        'sizes': '512x512'
+    },
+    {
+        'src': '/static/imagenes/dog.png',
+        'sizes': '128x128'
+    }
+]
