@@ -1,5 +1,0 @@
-SUPERUSER
-arvar - 1234	
-
-USER
-arvarus - 7845123A
